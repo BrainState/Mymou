@@ -55,7 +55,7 @@ public class PrefsActCamPicker extends FragmentActivity {
         findViewById(R.id.buttSelfieCamera).setOnClickListener(buttonClickListener);
 
         // First disable all buttons and only enable if you detect that camera
-        UtilsTask.toggleCue((Button) findViewById(R.id.buttExternalCam), false);
+//        UtilsTask.toggleCue((Button) findViewById(R.id.buttExternalCam), false);
         UtilsTask.toggleCue((Button) findViewById(R.id.buttRearCam), false);
         UtilsTask.toggleCue((Button) findViewById(R.id.buttSelfieCamera), false);
 
@@ -127,7 +127,6 @@ public class PrefsActCamPicker extends FragmentActivity {
 
     private void switch_camera(int id) {
         // Save new choice
-        Log.d(TAG, "Camera saved: " + preferencesManager.camera_to_use);
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt(getString(R.string.preftag_camera_to_use), id);
